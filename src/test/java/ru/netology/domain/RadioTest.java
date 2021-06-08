@@ -9,32 +9,37 @@ class RadioTest {
     public void shouldCurrentStationMax() {
         Radio radio = new Radio();
         radio.setCurrentStation(9);
-       assertEquals(9, radio.getCurrentStation());
+        assertEquals(9, radio.getCurrentStation());
     }
+
     @Test
     public void shouldCurrentStationBeforeMax() {
         Radio radio = new Radio();
         radio.setCurrentStation(8);
         assertEquals(8, radio.getCurrentStation());
     }
+
     @Test
     public void shouldCurrentStationAfterMax() {
         Radio radio = new Radio();
         radio.setCurrentStation(10);
         assertEquals(0, radio.getCurrentStation());
     }
+
     @Test
     public void shouldCurrentStationMin() {
         Radio radio = new Radio();
         radio.setCurrentStation(0);
         assertEquals(0, radio.getCurrentStation());
     }
+
     @Test
     public void shouldCurrentStationBeforeMin() {
         Radio radio = new Radio();
         radio.setCurrentStation(-1);
         assertEquals(0, radio.getCurrentStation());
     }
+
     @Test
     public void shouldCurrentStationAfterMin() {
         Radio radio = new Radio();
@@ -55,6 +60,7 @@ class RadioTest {
         radio.setPrevStation(-1);
         assertEquals(9, radio.getCurrentStation());
     }
+
     @Test
     public void shouldPrevStationAfterMin() {
         Radio radio = new Radio();
@@ -75,18 +81,21 @@ class RadioTest {
         radio.setNextStation(8);
         assertEquals(9, radio.getCurrentStation());
     }
+
     @Test
     public void shouldNextStationAfterMax() {
         Radio radio = new Radio();
         radio.setNextStation(10);
         assertEquals(0, radio.getCurrentStation());
     }
+
     @Test
     public void shouldPrevVolumeMin() {
         Radio radio = new Radio();
         radio.setPrevVolume(0);
         assertEquals(0, radio.getVolume());
     }
+
     @Test
     public void shouldPrevVolumeBeforeMin() {
         Radio radio = new Radio();
@@ -100,12 +109,14 @@ class RadioTest {
         radio.setPrevVolume(1);
         assertEquals(0, radio.getVolume());
     }
+
     @Test
     public void shouldNextVolumeMax() {
         Radio radio = new Radio();
         radio.setNextVolume(10);
         assertEquals(10, radio.getVolume());
     }
+
     @Test
     public void shouldNextVolumeBeforeMax() {
         Radio radio = new Radio();
