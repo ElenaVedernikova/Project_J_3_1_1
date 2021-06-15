@@ -23,32 +23,50 @@ public class Radio {
         this.currentStation = currentStation;
     }
 
-    public void setPrevStation(int currentStation) {
+    public void setPrevStation() {
         if (currentStation <= minStation) {
             this.currentStation = maxStation;
-        } else this.currentStation = currentStation - 1;
+        } else {
+            this.currentStation = currentStation - 1;
+        }
     }
 
-    public void setNextStation(int currentStation) {
+    public void setNextStation() {
         if (currentStation >= maxStation) {
             this.currentStation = minStation;
-        } else this.currentStation = currentStation + 1;
+        } else {
+            this.currentStation = currentStation + 1;
+        }
     }
 
     public int getVolume() {
         return currentVolume;
     }
 
-    public void setPrevVolume(int currentVolume) {
-        if (currentVolume <= minVolume) {
-            this.currentVolume = minVolume;
-        } else this.currentVolume = currentVolume - 1;
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume > maxVolume) {
+            return;
+        }
+        if (currentVolume < minVolume) {
+            return;
+        }
+        this.currentVolume = currentVolume;
     }
 
-    public void setNextVolume(int currentVolume) {
+    public void setPrevVolume() {
+        if (currentVolume <= minVolume) {
+            this.currentVolume = minVolume;
+        } else {
+            this.currentVolume = currentVolume - 1;
+        }
+    }
+
+    public void setNextVolume() {
         if (currentVolume >= maxVolume) {
             this.currentVolume = maxVolume;
-        } else this.currentVolume = currentVolume + 1;
+        } else {
+            this.currentVolume = currentVolume + 1;
+        }
     }
 
 }
